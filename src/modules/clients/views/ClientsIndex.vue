@@ -26,5 +26,16 @@ const {
     :data="clientes"
     :columnas="columns"
     :functEliminar="eliminarCliente"
-  ></DataTableVue>
+  >
+    <template v-slot:columnas-formateadas>
+      <Column
+        field="sueldo"
+        header="Sueldo"
+        :sortable="true"
+        headerStyle="width:25%; min-width:10rem;"
+      >
+        <template #body="{ data }"> ${{ data.sueldo }} </template>
+      </Column>
+    </template>
+  </DataTableVue>
 </template>

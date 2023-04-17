@@ -109,6 +109,8 @@ const { filters, goEdit } = useTable()
             headerStyle="width:25%; min-width:10rem;"
           ></Column>
 
+          <slot name="columnas-formateadas"></slot>
+
           <Column headerStyle="min-width:10rem;">
             <template #body="{ data }">
               <Button
